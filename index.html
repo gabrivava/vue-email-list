@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-email-list</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <style>
+        .d_flex {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- root -->
+    <div id="root" class="d_flex">
+        <!-- left side (stampa 1 alla volta) -->
+        <div>
+            <h3>stampa 1 mail alla volta</h3>
+            <ul>
+                <li v-for="mail in listaMail">
+                    {{mail}}
+                </li>
+            </ul>
+            
+        </div>
+        <!-- right side (stampa tutto assieme) -->
+        <div>
+            <h3>stampa 10 mail</h3>
+            <ul>
+                <li v-if="listaMail.length == 10" v-for="mail in listaMail">
+                    {{mail}}
+                </li>
+            </ul>
+            
+        </div>
+        
+    </div>
+
+    <!-- script AJAX e Vue js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    
+    <script src="./main.js"></script>
+</body>
+</html>
